@@ -4,24 +4,20 @@ const expect = chai.expect;
 const { Task } = require('./../src/todo');
 
 describe('Task', function() {
-  it('title must exist and not empty', function() {
-    const task = new Task('this a test', null, null, null);
+  it('Test must have a title, a description, a start and end date', function() {
+    const task = new Task(
+      'this a test',
+      'this is a test',
+      new Date(),
+      new Date()
+    );
     expect(task.title).to.exist;
     expect(task.title).to.not.empty;
-  });
-  it('description must exist and not empty', function() {
-    const task = new Task(null, 'this is a test', null, null);
     expect(task.description).to.exist;
     expect(task.description).to.not.empty;
-  });
-  it('startAt must exist and not empty', function() {
-    const task = new Task(null, null, new Date(), null);
     expect(task.startAt).to.exist;
-    expect(task.startAt).to.instanceOf(Date);
-  });
-  it('endAt must exist and not empty', function() {
-    const task = new Task(null, null, null, new Date());
+    expect(task.startAt).to.be.instanceOf(Date);
     expect(task.endAt).to.exist;
-    expect(task.endAt).to.instanceOf(Date);
+    expect(task.endAt).to.be.instanceOf(Date);
   });
 });
