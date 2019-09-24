@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-const { Todo, Task } = require('./../src/todo');
+const { Todo } = require('./../src/todo');
 
 describe('Todo', function() {
   it('tasks must exist and to be an array', function() {
