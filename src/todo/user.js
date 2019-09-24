@@ -1,6 +1,7 @@
 const Todo = require('./todo');
-function User(todoList) {
-  this.todoList = todoList;
+
+function User() {
+  this.todoList = new Todo();
 }
 
 module.exports = User;
